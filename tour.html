@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>대우건설 투어 예약</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h4>투어 예약하기</h4>
-        <p>투어 예약하는 페이지입니다.</p>
+        <p>조합원 고유번호를 입력하세요:</p>
+        <input type="text" id="memberId">
+        <button onclick="searchMember()">조회</button>
+        <p id="memberName"></p>
+
+        <p>예약 가능한 날짜 선택:</p>
+        <input type="date" id="tourDate">
+
+        <p>예약 가능한 시간 선택:</p>
+        <select id="tourTime">
+            <option value="10:00">10:00</option>
+            <option value="13:00">13:00</option>
+            <option value="15:00">15:00</option>
+        </select>
+
+        <p>인원수 입력:</p>
+        <input type="number" id="numberOfPeople" min="1" max="10">
+
+        <button onclick="reserveTour()">예약하기</button>
     </div>
+
+    <script>
+        function searchMember() {
+            var memberId = document.getElementById("memberId").value;
+            // 여기서 구글 시트와 통신하여 memberId에 해당하는 이름을 가져오는 로직을 구현해야 합니다.
+            // 가져온 이름은 아래의 memberName에 표시해야 합니다.
+            var memberName = "홍길동"; // 임시로 홍길동으로 설정
+            document.getElementById("memberName").innerHTML = "조회된 이름: " + memberName;
+        }
+
+        function reserveTour() {
+            var memberId = document.getElementById("memberId").value;
+            var tourDate = document.getElementById("tourDate").value;
+            var tourTime = document.getElementById("tourTime").value;
+            var numberOfPeople = document.getElementById("numberOfPeople").value;
+            
+            // 예약 정보를 서버로 전송하거나, 구글 시트에 추가하는 로직을 여기에 구현해야 합니다.
+            // 이 예제에서는 그 부분은 비워두었습니다.
+            alert("예약이 완료되었습니다!");
+        }
+    </script>
 </body>
 </html>
