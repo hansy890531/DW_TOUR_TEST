@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투어예약</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <header role="banner">
+        <hgroup>
+            <h1>투어예약</h1>
+        </hgroup>
+    </header>
+    
+    <main role="main">
+    <section id="hotel-booking-form-section">
+        <form>
+            <br/>
+            <fieldset>
+                <legend><h4>예약 대상자</h4></legend>
+                <div class="columns">
+                    <div class="form-element">
+                        <label for="fname">고유번호: </label>
+                        <div>
+                            <input id="fname" type="text" name="fname" placeholder="고유번호 입력">
+                        </div>
+                        <button type="submit">조합원 확인</button>
+                    </div>
+            </fieldset>
+            <br/>
+
+            <fieldset>
+                <legend><h4>투어 예약</h4></legend>
+                <div class="columns">
+                    <!-- <div class="form-element">
+                        <label for="checkindate">투어 날짜:</label>
+                        <input id="checkindate" type="date" name="투어 날짜" />
+                        <i class="fas fa-calendar-alt"></i>
+                    </div> -->
+
+                    <div class="form-element">
+                        <p>투어 날짜</p>
+                        <select>
+                            <option value="" disabled selected>날짜 선택</option>
+                            <option value="1" >4월 1일(월)</option>
+                            <option value="2">4월 2일(화)</option>
+                            <option value="3">4월 3일(수)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element">
+                        <p>투어 시간</p>
+                        <select>
+                            <option value="" disabled selected>시간 선택</option>
+                            <option value="1" >오전 10:30</option>
+                            <option value="2">오후 13:30</option>
+                            <option value="3">오후 16:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element">
+                        <p>조합원 포함 총 몇명인가요?</p>
+                        <select>
+                            <option value="0" disabled selected>인원수 선택</option>
+                            <option value="1" >1명</option>
+                            <option value="2">2명</option>
+                            <option value="3">3명</option>
+                            <option value="4">4명</option>
+                            <option value="5">5명</option>
+                            </select>
+                    </div>
+
+                </div>
+                <div class="form-element">
+                    <p>기타사항<p>
+                    <textarea id="instruction" rows="5"></textarea>
+                </div>
+            </fieldset>
+            
+            <form action="post">
+                <div class="btn-block">
+                    <button type="submit" href="/reservation/">투어예약</button>
+                </div>
+            </form>
+    </section>
+    </main>
+</body>
+</html>
